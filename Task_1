@@ -1,0 +1,67 @@
+1.What is the purpose of the ? operator in Dart null safety?
+EX:
+srting? name; //  يمكن أن يكون null
+but : string name ; //لا يمكن أن يكون null، لازم تعيين قيمة قبل الاستخدام
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+2.Create a late variable named address, assign a US value to it and print it
+EX:
+late String address;
+
+void main() {
+  address = "US";
+  print(address); // US
+} // هنا معناه عادى لو معطتش قيمة فى الاول ومش هيدينى ايرور ولكن لازم قبل ماستخدمه اعطيله قيمة
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+3.How do you declare a nullable type in Dart null safety?
+EX:
+int? age;       // age يمكن أن يكون null
+String? name;   // name يمكن أن يكون null
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+4.Write a program in a dart to create an age variable and assign a null value to it using ?.
+EX:
+void main() {
+  int? age = null;
+  print("Age is: $age");
+}
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+5.Write a function that accepts a nullable int parameter and returns 0 if the value is null using null coalescing operator ??.
+EX:
+int handleNullableInt(int? value) {
+  return value ?? 0; // إذا كانت null يرجع 0
+}
+
+void main() {
+  print(handleNullableInt(null)); // Print "0"
+  print(handleNullableInt(5));    // Print "5"
+}
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+6. Write a function named generateRandom() in dart that randomly returns 100 or null. Also, assign a return value of the function to a variable named status that can’t be null. Give status a default value of 0, if generateRandom() function returns null.
+EX:
+
+int? generateRandom() {
+  return 100;
+}
+
+void main() {
+  int status;
+  int? result = generateRandom();
+
+  if (result == null) {
+    status = 0;
+  } else {
+    status = result;
+  }
+
+  print("Status: $status");
+}
+
