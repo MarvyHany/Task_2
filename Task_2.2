@@ -1,0 +1,95 @@
+1.Create a program that asks the user to enter their name and their age. Print out a message that tells how many years they have to be 100 years old.
+Solution:
+import 'dart:io';
+
+void main() {    
+    stdout.write("Enter your name: ");
+    String name = stdin.readLineSync()!;
+
+    print("Enter your age:");
+    int age = int.parse(stdin.readLineSync()!);
+
+    int yearsToHunderd = 100 - age;
+    print("$name, You have $yearsToHunderd years to be 100");
+}
+
+##########################################################################################################
+
+2. Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.
+Solution:
+import 'dart:io';
+
+void main() {    
+    stdout.write("Enter The Number: ");
+    int number = int.parse(stdin.readLineSync()!);
+    
+    if (number % 2 == 0) {
+        print("Chosen number is even");
+    }
+    else {
+        print("Chosen number is odd");
+    }
+}
+
+##########################################################################################################
+
+3.Ask the user for a number and determine whether the number is prime or not.
+Solution:
+import 'dart:io';
+
+void main() {
+  stdout.write("Please Enter The Number: ");
+  int chosenNumber = int.parse(stdin.readLineSync()!);
+
+  checkPrime(chosenNumber);
+}
+
+void checkPrime(int number) {
+  
+  List<int> a = [
+    for (var i = 1; i <= number; i++)
+      if (number % i == 0) i
+  ];
+
+  a.length == 2
+      ? print("The chosen number is a prime")
+      : print("The chosen number is not a prime");
+}
+
+##########################################################################################################
+
+4.Implement a function that takes as input three variables, and returns the largest of the three. Do this without using the Dart max() function!
+Solution:
+void main() {
+  var max;
+  int a = 24;
+  int b = 12;
+  int c = 46;
+
+  if (a > b) {
+    max = a;
+  } else {
+    max = b;
+  }
+
+  if (c > max) {
+    max = c;
+  }
+  print(max);
+
+  List l = [a, b, c, 4, 5, 2, 1];
+  l.sort();
+  print(l.last);
+}
+
+##########################################################################################################
+
+5. Write a Dart code that takes this list and makes a new list that has only the even elements of this list in it.
+Solution:
+void main() {
+  List<int> a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+
+  int i = 0;
+  List<int> l = [];
+  print([for (var e in a) if (++i % 2 == 0) e]);
+}
